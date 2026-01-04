@@ -1,0 +1,59 @@
+# Environment variables (contains API keys)
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Generated content (optional - uncomment if you don't want to track generated files)
+# Growth/*.pdf
+# Growth/*.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (for the musashi subfolder)
+musashi/
+node_modules/
+
+# Logs
+*.log
+
+# Claude Code
+.claude/
+
+# Temp files
+nul
