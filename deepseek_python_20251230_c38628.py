@@ -28,37 +28,45 @@ class ContentGenerator:
         self.growth_folder = Path("Growth")
         self.growth_folder.mkdir(exist_ok=True)
         
-        # 设置提示模板 - Optimized for viral investment/money content
+        # 设置提示模板 - A/B FORMAT VARIATION SYSTEM
+        # Strategy: 5 core financial ideas × 2 different formats = 10 posts with variety
+        # This prevents algorithm suppression and audience fatigue while maintaining proven concepts
+
         self.prompts = [
-            # List format: "The real flex" (MASSIVE PERFORMER - 221K views)
+            # IDEA 1: Debt-free living is real wealth
+            # Format A: List (proven 221K views)
             "Create a list post starting with 'The real flex?' followed by 4-5 bullet points about financial freedom markers. Use format: '- No car payment' '- No credit card debt' '- A fat emergency fund' '- Investing every month' '- Sleeping peacefully at night'. Focus on debt-free living and smart money habits.",
 
-            # List format: "Life becomes easy when" (44K-65K views)
-            "Create a list starting with 'Life becomes easy when you have:' followed by 4-5 bullet points about financial milestones. Examples: '- No car note' '- No student loans' '- No credit card debt' '- 1 year of expenses saved' '- Automated monthly investments'. End with 'Make it a priority this year.'",
+            # Format B: Observation (new variation)
+            "Create an observation post using this structure: 'One pattern I've noticed in [wealthy/financially free/millionaire] people: They're obsessive about [eliminating debt/living below their means/financial clarity].' Then add 2-3 specific examples of what this looks like in practice. Keep it under 60 words. Focus on debt-free living as a wealth marker.",
 
-            # List format: "When you start making good money" (1.1M VIEWS!)
+            # IDEA 2: Diversification beats concentration risk
+            # Format A: Bold statement (proven 36K views)
+            "Share a controversial financial truth using comparison. Format: 'Don't put all your money in [Bitcoin]. Don't put all your money in [Stocks]. Don't put all your money in [Real Estate]. Instead, [invest in a little bit of everything so you have a diversified portfolio]!' Make it educational but provocative about diversification.",
+
+            # Format B: Story/Satire (new variation)
+            "Tell a short satirical story about someone who went all-in on one investment and lost vs. someone who diversified and won. Format: 'Met two investors. Guy A: [went all-in on crypto]. Made $[X], lost it all. Guy B: [spread across 7 assets]. Still building wealth in 2026.' Use specific numbers. End with a lesson about diversification risk.",
+
+            # IDEA 3: Time is more valuable than money (buy back your time)
+            # Format A: List - "When you make good money" (proven 1.1M views)
             "Create advice for people making good money. Start with 'When you start making good money, do this:' then list 5-7 smart money moves. Examples: 'Buy fewer clothes, but wear the highest quality' 'Hire a helper for household chores. Buy back your time' 'Upgrade your financial adviser' 'Surround yourself with high-value people'. End with 'Small shifts. Big impact.'",
 
-            # Specific dollar amount advice (50.9K views)
+            # Format B: Question (new variation)
+            "Ask a provocative question about time vs. money. Examples: 'Why do we spend 2 hours hunting for deals to save $20 but refuse to pay $100 to save 5 hours?' or 'How much is your time worth per hour? Are you living like it?' Make it personal and reflective about buying back time with money.",
+
+            # IDEA 4: Delayed gratification builds long-term wealth
+            # Format A: Conditional advice (proven 50K views)
             "Create conditional advice based on savings level. Format: 'If you have less than $[10k/20k/50k] saved:' followed by 4-5 bullet points of practical money-saving tips. Examples: '• Skip the bars' '• Cook at home' '• Cut subscriptions' '• Save aggressively'. End with a bold statement like 'No shame in this.' or '$300 on bottles isn't a flex. But saving $400/week to invest is.'",
 
-            # Investment comparison with math (347K views)
-            "Create a comparison showing investment returns with specific numbers. Compare two scenarios with real math (stocks vs real estate, index funds vs individual stocks, etc). Use format: 'If you invest $X in [option A] and it grows Y%, you've made $Z. If you use that same $X for [option B] and it [grows/appreciates] Y%, you've made $Z.' Show the difference and end with insight like 'That's the power of leverage!' or 'That's why diversification matters.'",
+            # Format B: Matrix (new variation)
+            "Create a 2x2 financial matrix using this format: 'High [income/earnings] + high [delayed gratification/saving rate] = [wealth builders]. High income + low saving rate = [broke earners]. Low income + high saving rate = [slow and steady]. Low income + low saving rate = [perpetually broke].' Use delayed gratification as a key variable. Keep it provocative.",
 
-            # Matrix format - FINANCE FOCUSED (36.3K views)
-            "Create a 2x2 financial matrix using this format: 'High [income/knowledge/discipline] + high [savings/investing/patience] = [wealth builders]. High X + low Y = [broke earners]. Low X + high Y = [slow and steady]. Low X + low Y = [perpetually broke].' Use money/investing variables only. Keep it provocative.",
-
-            # Money psychology question
-            "Ask a direct question about money psychology or investing behavior. Make it personal and reflective. Examples: 'what is an investment addiction that has been normalized?' or 'How do you deal with a friend who has better returns than you?' or 'what is money teaching you right now?'",
-
-            # Satire/Story format (310K views)
-            "Tell a short satirical story about investing or wealth with a punchline. Format: 'Met a guy today. Age: [22]. Portfolio: $[1 Million]. Started investing [post covid]. Investment: [allocation breakdown]. Goal: To retire at [30]. I asked him how he managed to build a [million-dollar] portfolio at such a young age. He said that after [market event], he worked hard and convinced his dad to give him $2 million.' Make the punchline expose privilege or unrealistic advice.",
-
-            # "Normalize" format (240K views)
+            # IDEA 5: Your circle determines your net worth (peer influence)
+            # Format A: "Normalize" format (proven 240K views)
             "Use the 'Normalize' format to promote healthy money habits. Structure: 'Normalize having friends who talk about [investments/side hustles/building generational wealth] instead of just [gossip/drama/consumption].' Then add a call to action like 'Upgrade your circle.' Focus on aspirational peer groups and money conversations.",
 
-            # Bold financial truth with controversial comparison
-            "Share a controversial financial truth using comparison. Format: 'Don't put all your money in [Bitcoin]. Don't put all your money in [Stocks]. Don't put all your money in [Real Estate]. Instead, [invest in a little bit of everything so you have a diversified portfolio]!' or 'Rich people [buy assets]. Poor people [buy liabilities thinking they're assets].' Make it educational but provocative."
+            # Format B: Comparison with math (new variation)
+            "Create a comparison showing the financial impact of peer groups using numbers. Format: 'If your 5 closest friends [average $50K income and spend it all], you'll likely [earn $50K and stay broke]. If your 5 closest friends [average $150K income and invest 30%], you'll likely [level up to 6 figures and build wealth].' Show the math. End with 'You become the average of your circle.'"
         ]
         
         # 设置PDF样式
@@ -234,18 +242,37 @@ Write like this - specific, educational, aspirational, with real numbers."""
         return posts
     
     def get_backup_content(self, index):
-        """获取备用内容（当API失败时使用）"""
+        """获取备用内容（当API失败时使用）- A/B Format Variations"""
         backup_contents = [
+            # IDEA 1A: Debt-free (List)
             "The real flex?\n\n- No car payment\n- No credit card debt\n- A fat emergency fund\n- Investing every month\n- Sleeping peacefully at night",
-            "Life becomes easy when you have:\n\n- No car note\n- No student loans\n- No credit card debt\n- 1 year of expenses saved\n- Automated monthly investments\n\nMake it a priority this year.",
+
+            # IDEA 1B: Debt-free (Observation)
+            "One pattern I've noticed in wealthy people: They're obsessive about eliminating debt.\n\nThey drive paid-off cars.\nThey avoid credit card balances.\nThey sleep peacefully.",
+
+            # IDEA 2A: Diversification (Bold statement)
             "Don't put all your money in Bitcoin.\nDon't put all your money in Stocks.\nDon't put all your money in Real Estate.\n\nInstead, invest in a little bit of everything so you have a diversified portfolio!",
-            "what is an investment addiction that has been normalized?",
-            "Normalize having friends who talk about investments, side hustles, and building generational wealth instead of just gossip.\n\nUpgrade your circle.",
-            "How do you deal with a friend who has better returns than you?",
-            "High income + high savings = wealth builders.\nHigh income + low savings = broke earners.\nLow income + high savings = slow and steady.\nLow income + low savings = perpetually broke.",
+
+            # IDEA 2B: Diversification (Story)
+            "Met two investors.\n\nGuy A: All-in on crypto. Made $200K in 2021. Lost it all by 2023.\n\nGuy B: Spread across 7 assets. Still building wealth in 2026.\n\nDiversification isn't boring. It's survival.",
+
+            # IDEA 3A: Time > Money (List)
+            "When you start making good money, do this:\n\n1. Buy fewer clothes, but wear the highest quality\n2. Hire help for household chores - buy back your time\n3. Upgrade your financial adviser\n4. Surround yourself with high-value people\n\nSmall shifts. Big impact.",
+
+            # IDEA 3B: Time > Money (Question)
+            "Why do we spend 2 hours hunting for deals to save $20 but refuse to pay $100 to save 5 hours?\n\nHow much is your time actually worth?",
+
+            # IDEA 4A: Delayed gratification (Conditional)
             "If you have less than $10k saved:\n\n• Skip the bars\n• Cook at home\n• Cut subscriptions\n• Save aggressively\n\nNo shame in this.\n\n$300 on bottles isn't a flex.\nBut saving $400/week to invest is.",
-            "what is money teaching you right now?",
-            "When you start making good money, do this:\n\n1. Buy fewer clothes, but wear the highest quality\n2. Upgrade your financial adviser\n3. Surround yourself with high-value people\n\nSmall shifts. Big impact."
+
+            # IDEA 4B: Delayed gratification (Matrix)
+            "High income + high saving rate = wealth builders.\nHigh income + low saving rate = broke earners.\nLow income + high saving rate = slow and steady.\nLow income + low saving rate = perpetually broke.",
+
+            # IDEA 5A: Circle influence (Normalize)
+            "Normalize having friends who talk about investments, side hustles, and building generational wealth instead of just gossip.\n\nUpgrade your circle.",
+
+            # IDEA 5B: Circle influence (Math comparison)
+            "If your 5 closest friends average $50K and spend it all, you'll earn $50K and stay broke.\n\nIf your 5 closest friends average $150K and invest 30%, you'll level up to 6 figures.\n\nYou become the average of your circle."
         ]
         return backup_contents[index % len(backup_contents)]
     
