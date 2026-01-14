@@ -150,7 +150,7 @@ Write like this - specific, educational, aspirational, with real numbers."""
                     }
                 ],
                 "temperature": 1.0,
-                "max_tokens": 100,
+                "max_tokens": 400,
                 "stream": False
             }
             
@@ -191,11 +191,11 @@ Write like this - specific, educational, aspirational, with real numbers."""
             if content:
                 # Allow longer content for matrix/framework formats, but cap others
                 word_count = len(content.split())
-                # If it's a matrix format (contains multiple lines or "="), allow up to 60 words
+                # If it's a matrix format (contains multiple lines or "="), allow up to 200 words
                 if '=' in content or '\n' in content:
-                    max_words = 60
+                    max_words = 200
                 else:
-                    max_words = 25
+                    max_words = 150
 
                 if word_count > max_words:
                     words = content.split()[:max_words]
